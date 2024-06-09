@@ -5,6 +5,9 @@
 curr_dir="$(dirname "$0")"
 export LD_LIBRARY_PATH="${curr_dir}/bin"
 
+# Create the directory for binaries.
+mkdir -p "${curr_dir}/bin"
+
 # Build the libarrcalc.s as the shared library libarrcalc.so.
 gcc "${curr_dir}/../libarrcalc.s" -pie -shared -o "${curr_dir}/bin/libarrcalc.so"
 
